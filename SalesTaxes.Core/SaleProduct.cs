@@ -2,9 +2,9 @@
 
 namespace SalesTaxes.Core
 {
-	public class InputLine
+	public class SaleProduct
 	{
-		public InputLine ()
+		public SaleProduct ()
 		{
 		}
 	}
