@@ -2,7 +2,7 @@
 
 namespace SalesTaxes.Core
 {
-	public class InputLine
+	public class InputProductLine
 	{
 		public int Qty {
 			get;
@@ -14,7 +14,7 @@ namespace SalesTaxes.Core
 			set;
 		}
 
-		public double LinePrice {
+		public decimal LinePrice {
 			get;
 			set;
 		}

@@ -3,31 +3,38 @@ using System.Text.RegularExpressions;
 
 namespace SalesTaxes.Core
 {
-	public class TextInputLineParser : InputLineParser
+	public class SaleInputLineParser : InputLineParser
 	{
 		
 		private Regex _regEx;
-		private string _assignmentPattern = @"^(\d+) (imported)?(.*) at (.*)$";
+		private string _assignmentPattern = @"^(\d+) (.*) at (.*)$";
 
 
-		public TextInputLineParser ()
+		public SaleInputLineParser ()
 		{
 			_regEx = new Regex (_assignmentPattern);
 		}
 
 		#region InputLineParser implementation
-		public InputLine Parse (string input)
+		public InputProductLine Parse (string input)
 		{
+			var imported = false;
+			if (input.Contains("imported")) {
+				input = input.Replace("imported ", "");
+				imported = true;
+			}
+				
+
 			if (_regEx.IsMatch (input)) {
+
 				var matches = Regex.Matches (input, _assignmentPattern, RegexOptions.IgnoreCase);
 				var qty = matches [0].Groups [1].Value;
-				var imported = matches [0].Groups [2].Value;
-				var desc = matches [0].Groups [3].Value;
-				var price = matches [0].Groups [4].Value;
-				return new InputLine {
+				var desc = matches [0].Groups [2].Value;
+				var price = matches [0].Groups [3].Value;
+				return new InputProductLine {
 					Description = desc.Trim(),
-					Imported = !string.IsNullOrEmpty(imported),
-					LinePrice = Convert.ToDouble (price),
+					Imported = imported,
+					LinePrice = Convert.ToDecimal (price),
 					Qty = Convert.ToInt32 (qty)
 
 				};

@@ -2,8 +2,13 @@
 
 namespace SalesTaxes.Core
 {
-	public enum EmptyEnumeration
+	public enum TaxCategory
 	{
+		Invalid,
+		Book,
+		Food,
+		Drug,
+		Other
 	}
 }
 
