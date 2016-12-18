@@ -59,7 +59,7 @@ namespace SalesTaxes.Tests
 			var outLine6 = "Total: 74.68";
 		}
 
-
+	}
 
 }
 
