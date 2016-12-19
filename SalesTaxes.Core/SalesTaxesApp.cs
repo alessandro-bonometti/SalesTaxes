@@ -27,7 +27,8 @@ namespace SalesTaxes.Core
 		{
 
             _productFactory.CreateProducts(productLines)
-                    .Select(p => p.CalculateTaxes(_taxCalculator))                
+                    .Select(p => p.CalculateTaxes(_taxCalculator))    
+		    .ToList()
                     .PrintWith(_productPrinter);            		                        			
 		}
 
