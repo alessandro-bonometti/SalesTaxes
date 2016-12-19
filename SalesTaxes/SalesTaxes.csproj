@@ -37,4 +37,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\SalesTaxes.Core\SalesTaxes.Core.csproj">
+      <Project>{B47C5FF1-0BB2-4FAC-96BE-4710B6B866BD}</Project>
+      <Name>SalesTaxes.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
