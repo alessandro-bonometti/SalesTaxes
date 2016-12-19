@@ -36,13 +36,17 @@ namespace SalesTaxes
 
 		}
 
+		private static SalesTaxes.Core.SalesTaxes InitApp()
+		{
+			return new SalesTaxesApp (new ProductFactory (new DumbProductRegister (), 
+				new SaleInputLineParser ()),
+				new SalesTaxCalculator (),
+				new ReceiptPrinter (new ConsoleDisplay ()));
+		}
 
 		public static void Main (string[] args)
 		{
-			var app = new SalesTaxesApp (new ProductFactory (new DumbProductRegister (), 
-				          new SaleInputLineParser ()),
-				          new SalesTaxCalculator (),
-				          new ReceiptPrinter (new ConsoleDisplay ()));
+			var app = InitApp ();
 
 			Console.WriteLine ("Printing Receipt for Input1...");
 			Console.WriteLine ();
