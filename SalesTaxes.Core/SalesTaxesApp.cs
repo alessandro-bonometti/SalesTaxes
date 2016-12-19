@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace SalesTaxes.Core
 {
@@ -24,15 +25,23 @@ namespace SalesTaxes.Core
 
 		public void PrintSalesTaxes (IEnumerable<string> productLines)
 		{
-			var products = _productFactory.CreateProducts (productLines)
-				.ToList ();
-			foreach (var product in products) {
-				product.CalculateTaxes (_taxCalculator);
-			}
-			_productPrinter.Print (products);
+
+            _productFactory.CreateProducts(productLines)
+                    .Select(p => p.CalculateTaxes(_taxCalculator))                
+                    .PrintWith(_productPrinter);            		                        			
 		}
 
 		#endregion
 	}
+
+
+    public static class ProductExt
+    {
+        public static void PrintWith(this IEnumerable<Product> products, ProductPrinter printer)
+        {
+            printer.Print(products);
+        }
+    }
+
 }
 
