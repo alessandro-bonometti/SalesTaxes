@@ -1,2 +1,5 @@
 language: csharp
 solution: SalesTaxes.sln
+script:
+  - xbuild /p:Configuration=Release SalesTaxes.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./SalesTaxes.Tests/bin/Release/MyProject.Tests.dll
