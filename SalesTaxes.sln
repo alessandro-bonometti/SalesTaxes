@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Tests", "SalesTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Core", "SalesTaxes.Core\SalesTaxes.Core.csproj", "{B47C5FF1-0BB2-4FAC-96BE-4710B6B866BD}"
 EndProject
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "SalesTaxes.FSharp", "SalesTaxes.FSharp\SalesTaxes.FSharp.fsproj", "{862EC78D-447C-475A-9895-FCD68755D4E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,6 +23,10 @@ Global
 		{542BA593-A625-4E41-862B-9EC9B14A03B3}.Debug|x86.Build.0 = Debug|x86
 		{542BA593-A625-4E41-862B-9EC9B14A03B3}.Release|x86.ActiveCfg = Release|x86
 		{542BA593-A625-4E41-862B-9EC9B14A03B3}.Release|x86.Build.0 = Release|x86
+		{862EC78D-447C-475A-9895-FCD68755D4E3}.Debug|x86.ActiveCfg = Debug|x86
+		{862EC78D-447C-475A-9895-FCD68755D4E3}.Debug|x86.Build.0 = Debug|x86
+		{862EC78D-447C-475A-9895-FCD68755D4E3}.Release|x86.ActiveCfg = Release|x86
+		{862EC78D-447C-475A-9895-FCD68755D4E3}.Release|x86.Build.0 = Release|x86
 		{B47C5FF1-0BB2-4FAC-96BE-4710B6B866BD}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{B47C5FF1-0BB2-4FAC-96BE-4710B6B866BD}.Debug|x86.Build.0 = Debug|Any CPU
 		{B47C5FF1-0BB2-4FAC-96BE-4710B6B866BD}.Release|x86.ActiveCfg = Release|Any CPU
